@@ -21,10 +21,14 @@ print(len(my_tuple))
 ready_for_csv = reverse_geocode.search(my_tuple)
 print(ready_for_csv[:30])
 cities = [i["city"]for i in ready_for_csv]
+countries = [i["country"]for i in ready_for_csv]
+
 print(cities[:19])
 
 print(len(cities))
 
 dataframe["my_cities"] = cities
+dataframe["my_countries"] = countries
 
+# dataframe["my_countries"]
 added_cities = dataframe.to_csv("./added_cities.csv")
